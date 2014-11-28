@@ -1,0 +1,5 @@
+c:\users\ar_vanor\documents\visual studio 2012\Projects\TestJs\TestJs\bin\TestJs.dll
+c:\users\ar_vanor\documents\visual studio 2012\Projects\TestJs\TestJs\bin\TestJs.pdb
+c:\users\ar_vanor\documents\visual studio 2012\Projects\TestJs\TestJs\obj\Debug\TestJs.csprojResolveAssemblyReference.cache
+c:\users\ar_vanor\documents\visual studio 2012\Projects\TestJs\TestJs\obj\Debug\TestJs.dll
+c:\users\ar_vanor\documents\visual studio 2012\Projects\TestJs\TestJs\obj\Debug\TestJs.pdb
