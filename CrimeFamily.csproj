@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangeLog.html" />
     <Content Include="Css\TabStyle.css" />
     <Content Include="Index.html" />
     <Content Include="Scripts\Base.js" />

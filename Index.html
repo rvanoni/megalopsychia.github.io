@@ -8,20 +8,17 @@
     <link href="../Css/TabStyle.css" rel="stylesheet"/>
 
 
-    <title></title>
+    <title>Crime Family</title>
 </head>
 <body onload="OnLoad()">
-
-    <!--
-
-    <br />-->
-
+    <h3>Crime Family</h3>
     <div class="tabs">
     <ul class="tab-links">
         <li class="active"><a href="#tab1">Main</a></li>
         <li id="Shop"><a href="#tab2">Shop</a></li>
         <li id="Employees"><a href="#tab3">Employees</a></li>
         <li id="Organization"><a href="#tab4">Organization</a></li>
+        <li id="Base"><a href="#tab5">Base</a></li>
     </ul>
  
     <div class="tab-content">
@@ -29,13 +26,10 @@
         <div id="tab1" class="tab active">
             <div id="MainMje"></div>
             <div id="MainSubMje"></div>
-
             <br />
-
             <table>
                 <tr>
                     <td>
-                        <!--Money: $<div id="Money" style="display:inline;"></div>-->
                         <input type="button" value="Steal Money" onclick="GetMoney()" />
                     </td>
                     <td>
@@ -88,7 +82,7 @@
                         Steal rate / sec:
                     </td>
                     <td>
-                        Power:
+                        Respect:
                     </td>
                     <td>
                         Actions:
@@ -125,6 +119,33 @@
                 </tr>
             </table>
         </div>
+
+        <!-- #### BASE TAB #### -->
+        <div id="tab5" class="tab">
+            <div id="BaseMje"></div>
+            <div id="BaseSubMje"></div>
+            <br />
+            <table id="BaseTable">
+                <tr>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        :
+                    </td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 </div>
 
@@ -132,8 +153,14 @@
 <div id="currentMoneyRate"></div>
 <div id="currentRespect"></div>
 <div id="MoneyPerSec"></div>
-
-
+<br />
+<input type="button" onclick="SaveGame()" value="Save" />
+<input type="button" onclick="LoadGame()" value="Load" />
+<input type="button" onclick="DeleteGame()" value="Delete" />
+<br />
+<br />
+<a href="ChangeLog.html" target="_blank">Changelog</a> <br />
+Created by <a href="mailto:rodrigovanoni@gmail.com" target="_blank">Rodrigo Vanoni</a>
 
 <script src="../Scripts/jquery-1.8.2.js"></script>
 <script>
