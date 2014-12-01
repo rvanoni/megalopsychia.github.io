@@ -57,8 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangeLog.html" />
     <Content Include="Css\TabStyle.css" />
-    <Content Include="Pages\Index.html" />
+    <Content Include="Index.html" />
     <Content Include="Scripts\Base.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -74,6 +75,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
