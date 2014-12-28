@@ -5,179 +5,385 @@
 
     <script type="text/javascript" src="../Scripts/Base.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
-    <link href="../Css/TabStyle.css" rel="stylesheet"/>
 
+    <link rel="stylesheet" type="text/css" media="all" href="../Css/obscura/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../Css/obscura/css/TabStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/obscura/css/media-queries.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/obscura/js/player/mediaelementplayer.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
+
+    <script type="text/javascript" src="../Css/obscura/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/ddsmoothmenu.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/retina.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/selectnav.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/jquery.masonry.min.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/mediaelement.min.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/mediaelementplayer.min.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/jquery.dcflickr.1.0.js"></script>
+    <script type="text/javascript" src="../Css/obscura/js/twitter.min.js"></script>
+    <script type="text/javascript">
+        $.backstretch("../Css/obscura/images/bg/1.jpg");
+    </script>
 
     <title>Crime Family</title>
 </head>
 <body onload="OnLoad()">
-    <h3>Crime Family</h3>
-    <div class="tabs">
-    <ul class="tab-links">
-        <li class="active"><a href="#tab1">Main</a></li>
-        <li id="Shop"><a href="#tab2">Shop</a></li>
-        <li id="Employees"><a href="#tab3">Employees</a></li>
-        <li id="Organization"><a href="#tab4">Organization</a></li>
-        <li id="Base"><a href="#tab5">Base</a></li>
-    </ul>
- 
-    <div class="tab-content">
-        <!-- #### MAIN TAB #### -->
-        <div id="tab1" class="tab active">
-            <div id="MainMje"></div>
-            <div id="MainSubMje"></div>
-            <br />
-            <table>
-                <tr>
-                    <td>
-                        <input type="button" value="Steal Money" onclick="GetMoney()" />
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
-            </table>
-        </div>
 
-        <!-- #### SHOP TAB #### -->
-        <div id="tab2" class="tab">
-            <div id="ShopMje"></div>
-            <div id="ShopSubMje"></div>
-            <br />
-            <table id="WeaponsTable">
-                <tr>
-                    <td>
-                        Weapon:
-                    </td>
-                    <td>
-                        Cost:
-                    </td>
-                    <td>
-                        Bonus:
-                    </td>
-                    <td>
-                        Actions:
-                    </td>
-                    <td>
-                        Quantity:
-                    </td>
-                </tr>
-            </table>
-        </div>
- 
-        <!-- #### EMPLOYEES TAB #### -->
-        <div id="tab3" class="tab">
-            <div id="EmployeesMje"></div>
-            <div id="EmployeesSubMje"></div>
-            <br />
-            <table id="EmployeesTable">
-                <tr>
-                    <td>
-                        Employee:
-                    </td>
-                    <td>
-                        Cost:
-                    </td>
-                    <td>
-                        Steal rate / sec:
-                    </td>
-                    <td>
-                        Respect:
-                    </td>
-                    <td>
-                        Actions:
-                    </td>
-                    <td>
-                        Hired:
-                    </td>
-                </tr>
-            </table>
-        </div>
- 
-        <!-- #### ORGANIZATION TAB #### -->
-        <div id="tab4" class="tab">
-            <div id="OrganizationMje"></div>
-            <div id="OrganizationSubMje"></div>
-            <br />
-            <table id="OrganizationTable">
-                <tr>
-                    <td>
-                        Upgrade:
-                    </td>
-                    <td>
-                        Cost:
-                    </td>
-                    <td>
-                        Bonus:
-                    </td>
-                    <td>
-                        Actions:
-                    </td>
-                    <td>
-                        Quantity:
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <div class="scanlines"></div>
 
-        <!-- #### BASE TAB #### -->
-        <div id="tab5" class="tab">
-            <div id="BaseMje"></div>
-            <div id="BaseSubMje"></div>
-            <br />
-            <table id="BaseTable">
-                <tr>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        :
-                    </td>
-                    <td>
-                        :
-                    </td>
-                </tr>
-            </table>
+    <!-- Begin Header -->
+    <div class="header-wrapper opacity">
+        <div class="header">
+            <!-- Begin Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../Css/obscura/images/logo.png" alt="" />
+                </a>
+            </div>
+            <!-- End Logo -->
+            <!-- Begin Menu -->
+            <div id="menu-wrapper">
+                <div id="menu" class="menu">
+                    <ul id="tiny">
+                        <li>
+                            <a href="index.html">Game</a>
+                        </li>
+                        <li>
+                            <a href="help.html" target="_blank">Help</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" target="_blank">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <!-- End Menu -->
         </div>
+    </div>
+    <!-- End Header -->
+    <!-- Begin Wrapper -->
+    <div class="wrapper">
+        <!-- Begin Intro -->
+        <div class="intro">Crime Family</div>
+        <div class="subintro" id="currentMoney">1</div>
+        <div class="subintro" id="currentRespect">3</div>
+        <!-- End Intro -->
+        <!-- Begin Blog Grid -->
+        <div class="blog-wrap">
+            <!-- Begin Blog -->
+            <div class="blog-grid">
+
+                <!-- Begin Information -->
+                <div class="post format-standard box">
+                    <!--<div class="frame">
+                            <img src="../Css/obscura/images/art/post1.jpg" alt="" />
+                    </div>-->
+                    <h2 class="title">Information</h2>
+                    <p>
+                        <div id="currentMoneyRate">2</div>
+                        <div id="MoneyPerSec">4</div>
+                        <br />
+
+                        <a href="ChangeLog.html" target="_blank">Changelog</a> <br />
+                        Created by <a href="mailto:rodrigovanoni@gmail.com" target="_blank">Rodrigo Vanoni</a>
+                    </p>
+                   
+                </div>
+                
+                <!-- End Information -->
+                
+                <!-- Begin Main -->
+                <div class="post format-standard box">
+                    <!--<div class="frame">
+                        <img src="../Css/obscura/images/art/post1.jpg" alt="" />
+                    </div>-->
+                    <h2 class="title">Main</h2>
+                    <p>
+                        <div id="MainMje"></div>
+                        <div id="MainSubMje"></div>
+                        <br />
+                        <div id="StealMoneyButton"></div>
+                    </p>
+                    <div class="details">
+                        Tip: Steal money.
+                    </div>
+                </div>
+                <!-- End Main -->                
+
+                <!-- Begin Shop -->
+                <div class="post format-standard box" id="Shop" style="height:250px;">
+                        <h2 class="title">Shop</h2>
+                        <div id="ShopMje"></div>
+                        <div id="ShopSubMje"></div>
+                        <br />
+                        <table id="WeaponsTable" class="WeaponsTable">
+                            <tr>
+                                <td class="Weapon">
+                                    Weapon
+                                </td>
+                                <td class="WeaponCost">
+                                    Cost
+                                </td>
+                                <td class="WeaponBonus">
+                                    Bonus
+                                </td>
+                                <td class="WeaponActions">
+                                    Actions
+                                </td>
+                                <td class="WeaponInventory">
+                                    Inventory
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                <!-- End Shop -->
+                
+                <!-- Begin Employees -->
+                <div class="post format-standard box" id="Employees" style="height:270px;">
+                    <h2 class="title">Employees</h2>
+                    <div id="EmployeesMje"></div>
+                    <div id="EmployeesSubMje"></div>
+                    <br />
+                    <table id="EmployeesTable" class="EmployeesTable">
+                        <tr>
+                            <td class="Employee">
+                                Employee
+                            </td>
+                            <td class="EmployeeCost">
+                                Cost
+                            </td>
+                            <td class="EmployeeRate">
+                                Steal rate / sec
+                            </td>
+                            <td class="EmployeeRespect">
+                                Respect
+                            </td>
+                            <td class="EmployeeActions">
+                                Actions
+                            </td>
+                            <td class="EmployeeHired">
+                                Hired
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- End Employees -->
+                
+                <!-- Begin Organization -->
+                <div class="post format-standard box" id="Organization" style="height:340px;">
+                    <h2 class="title">Organization</h2>
+                    <div id="OrganizationMje"></div>
+                    <div id="OrganizationSubMje"></div>
+                    <br />
+                    <table id="OrganizationTable" class="OrganizationTable">
+                        <tr>
+                            <td class="Upgrade">
+                                Upgrade
+                            </td>
+                            <td class="OrganizationCost">
+                                Cost
+                            </td>
+                            <td class="OrganizationBonus">
+                                Bonus
+                            </td>
+                            <td class="OrganizationActions">
+                                Actions
+                            </td>
+                            <td class="OrganizationInventory">
+                                Inventory
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- End Organization -->  
+
+                <!-- Begin Base -->
+                <div class="post format-standard box" id="Base" style="height:270px;">
+                    <h2 class="title">Base</h2>
+                    <div id="BaseMje"></div>
+                    <div id="BaseSubMje"></div>
+                    <br />
+                    <table id="BaseTable">
+                        <tr>
+                            <td>
+                                :
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td>
+                                :
+                            </td>
+                            <td>
+                                :
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- End Organization -->     
+
+
+            </div>
+            <!-- End Blog -->
+        </div>
+        <!-- End Blog Grid -->
+        <ul class="social">
+            <li><!--<a class="rss" href="#"></a>--></li>
+            <li><a class="facebook" href="#"></a></li>
+            <li><a class="twitter" href="#"></a></li>
+            <li><!--<a class="pinterest" href="#"></a>--></li>
+            <li><!--<a class="dribbble" href="#"></a>--></li>
+            <li><!--<a class="flickr" href="#"></a>--></li>
+            <li><!--<a class="linkedin" href="#"></a>--></li>
+        </ul>
 
     </div>
-</div>
+    <!-- End Wrapper -->
+    <!-- Begin Footer -->
+    <div class="footer-wrapper">
+        <br />
+            
+    </div>
+    <div class="site-generator-wrapper">
+        <div class="site-generator"> Copyright 2014. All rights reserved.</div>
+    </div>
+    <!-- End Footer --> 
+    <script type="text/javascript" src="../Css/obscura/js/scripts.js"></script>
 
-<div id="currentMoney"></div>
-<div id="currentMoneyRate"></div>
-<div id="currentRespect"></div>
-<div id="MoneyPerSec"></div>
-<br />
+
+    <!--##########################################################################################-->
+    <!--<h3>Crime Family</h3>
+
+    <table>
+        <tr>
+            <td>
+                <div id="MainMje"></div>
+                <div id="MainSubMje"></div>
+                <input type="button" value="Steal Money" onclick="GetMoney()" />
+            </td>
+            <td id="Shop">
+                <div id="ShopMje"></div>
+                <div id="ShopSubMje"></div>
+                <br />
+                <table id="WeaponsTable">
+                    <tr>
+                        <td>
+                            Weapon:
+                        </td>
+                        <td>
+                            Cost:
+                        </td>
+                        <td>
+                            Bonus:
+                        </td>
+                        <td>
+                            Actions:
+                        </td>
+                        <td>
+                            Quantity:
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td id="Employees">
+                <div id="EmployeesMje"></div>
+                <div id="EmployeesSubMje"></div>
+                <br />
+                <table id="EmployeesTable">
+                    <tr>
+                        <td>
+                            Employee:
+                        </td>
+                        <td>
+                            Cost:
+                        </td>
+                        <td>
+                            Steal rate / sec:
+                        </td>
+                        <td>
+                            Respect:
+                        </td>
+                        <td>
+                            Actions:
+                        </td>
+                        <td>
+                            Hired:
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="Organization">
+                <div id="OrganizationMje"></div>
+                <div id="OrganizationSubMje"></div>
+                <br />
+                <table id="OrganizationTable">
+                    <tr>
+                        <td>
+                            Upgrade:
+                        </td>
+                        <td>
+                            Cost:
+                        </td>
+                        <td>
+                            Bonus:
+                        </td>
+                        <td>
+                            Actions:
+                        </td>
+                        <td>
+                            Quantity:
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td id="Base">
+                <div id="BaseMje"></div>
+                <div id="BaseSubMje"></div>
+                <br />
+                <table id="BaseTable">
+                    <tr>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            :
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>-->
+
+    <!--##########################################################################################-->
+
+
+<!--<br />
 <input type="button" onclick="SaveGame()" value="Save" />
 <input type="button" onclick="LoadGame()" value="Load" />
-<input type="button" onclick="DeleteGame()" value="Delete" />
-<br />
-<br />
-<a href="ChangeLog.html" target="_blank">Changelog</a> <br />
-Created by <a href="mailto:rodrigovanoni@gmail.com" target="_blank">Rodrigo Vanoni</a>
+<input type="button" onclick="DeleteGame()" value="Delete" />-->
 
-<script src="../Scripts/jquery-1.8.2.js"></script>
-<script>
-    jQuery(document).ready(function () {
-        jQuery('.tabs .tab-links a').on('click', function (e) {
-            var currentAttrValue = jQuery(this).attr('href');
+<!--<script src="../Scripts/jquery-1.8.2.js"></script>-->
 
-            // Show/Hide Tabs
-            jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-
-            // Change/remove current tab to active
-            jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-
-            e.preventDefault();
-        });
-    });
-</script>
     
 
 </body>

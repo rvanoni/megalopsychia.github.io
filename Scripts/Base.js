@@ -84,9 +84,20 @@ function DeleteGame()
     document.cookie = "EmployeeTabEnabled=;" + DeleteCookie;
     document.cookie = "BaseTabEnabled=;" + DeleteCookie;
 }
+function CreateStealMoneyBtn()
+{
+    var btn = document.createElement('button');
+    btn.setAttribute('onclick', 'GetMoney()');
+    var t = document.createTextNode("Steal Money");
+    btn.appendChild(t);
+
+    document.getElementById('StealMoneyButton').appendChild(btn);
+}
 function OnLoad() 
 {
     setInterval(Refresh, 500);
+
+    CreateStealMoneyBtn();
 
     HideTab('Shop');
     HideTab('Employees');
@@ -95,6 +106,8 @@ function OnLoad()
 
     SetMessage('MainMje', 'You are a low-level thief, cant really steal from others than homeless and old people.');
     SetMessage('MainSubMje', 'Do you really wanna steal from those poor people?');
+    SetMessage('currentRespect', '<br />');
+    SetMessage('MoneyPerSec', '<br />');
 }
 function BuyWeapon(id)
 {
@@ -173,13 +186,13 @@ function RefreshWeaponsTable()
         cell.innerHTML = WeaponsName[i];
 
         var cell1 = row.insertCell(1);
-        cell1.innerHTML = WeaponsCost[i];
+        cell1.innerHTML = '$' + WeaponsCost[i];
 
         var cell2 = row.insertCell(2);
         cell2.innerHTML = 'Steal Money +$' + WeaponsBonus[i];
 
         var cell3 = row.insertCell(3);
-        var btn = document.createElement('Button');
+        var btn = document.createElement('button');
         btn.setAttribute('onclick', 'BuyWeapon(' + i + ')');
         var t = document.createTextNode("Buy");
         btn.appendChild(t);
@@ -250,7 +263,7 @@ function RefreshOrganizationTable()
         cell.innerHTML = OrgNames[i];
 
         var cell1 = row.insertCell(1);
-        cell1.innerHTML = OrgCost[i];
+        cell1.innerHTML = '$' + OrgCost[i];
 
         var cell2 = row.insertCell(2);
         cell2.innerHTML = OrgBonus[i] + ' +' + OrgBonusRate[i];
@@ -263,7 +276,7 @@ function RefreshOrganizationTable()
         cell3.appendChild(btn);
 
         var cell4 = row.insertCell(4);
-        cell4.innerHTML = OrgInventory[i];
+        cell4.innerHTML = OrgInventory[i] + '/' + OrgCap[i];
     }
 }
 function BuyOrgItem(id)
@@ -276,12 +289,14 @@ function BuyOrgItem(id)
         switch(OrgBonusType)
         {
             case 'WeaponsCap':
-                for (var i = 0; i < WeaponsCap; i++){
+                for (var i = 0; i < WeaponsCap; i++)
+                {
                     WeaponsCap[i] += OrgBonusRate[id];
                 }
             break;
             case 'EmployeeCap':
-                for (var i = 0; i < EmployeeCap; i++) {
+                for (var i = 0; i < EmployeeCap; i++)
+                {
                     EmployeeCap[i] += OrgBonusRate[id];
                 }
             break;
@@ -290,18 +305,19 @@ function BuyOrgItem(id)
             break;
             case 'EmployeesStealRate':
                 var cont = 0;
-                for (var i = 0; i < EmployeesInventory; i++) {
+                for (var i = 0; i < EmployeesInventory; i++)
+                {
                     cont += EmployeesInventory[i];
                 }
 
             break;
-
         }
 
         if (OrgNames[id] == 'Base' && !BaseTabEnabled)
         {
             alert('Congratulations, you now have a brand new base!');
             ShowTab('Base');
+            BaseTabEnabled = true;
         }
         
     }
@@ -315,7 +331,7 @@ function GetMoney()
     if (parseInt(Money) >= 10 && !ShopTabEnabled)
     {
         SetMessage('MainMje', 'Boy, you are really stealing from them.');
-        SetMessage('MainSubMje', 'f');
+        SetMessage('MainSubMje', '<br /> <br /> ');
     }
 
     if (parseInt(Money) >= 15 && !ShopTabEnabled)
@@ -334,12 +350,12 @@ function Refresh()
     div.innerHTML = 'Current Money: $' + Money.toFixed(2);
 
     var div = document.getElementById('currentMoneyRate');
-    div.innerHTML = 'Money Steal Rate: +$' + MoneyRate.toFixed(2) + ' per steal.';
+    div.innerHTML = 'Money Steal Rate: $' + MoneyRate.toFixed(2) + ' per steal.';
 
     if (EmployeeTabEnabled)
     {
         var div = document.getElementById('MoneyPerSec');
-        div.innerHTML = 'Money per second: +$' + (MoneyRate * EmployeesStealRateBonus).toFixed(3);
+        div.innerHTML = 'Money per second: $' + (MoneyRate * EmployeesStealRateBonus).toFixed(3);
 
         var div = document.getElementById('currentRespect');
         div.innerHTML = 'Respect: ' + Respect;

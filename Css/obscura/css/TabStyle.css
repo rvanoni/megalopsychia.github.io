@@ -1,0 +1,110 @@
+﻿.WeaponsTable
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+    .WeaponsTable td
+    {
+        border-bottom:1px solid grey;
+    }
+
+    .Weapon
+    {
+        width:100px;
+        font-weight:bold;
+    }
+    .WeaponCost
+    {
+        width:50px;
+        font-weight:bold;
+    }
+    .WeaponBonus
+    {
+        width:150px;
+        font-weight:bold;
+    }
+    .WeaponActions
+    {
+        width:100px;
+        font-weight:bold;
+    }
+    .WeaponInventory
+    {
+        width:60px;
+        font-weight:bold;
+    }
+.EmployeesTable
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+    .EmployeesTable td
+    {
+        border-bottom:1px solid grey;
+    }
+
+    .Employee
+    {
+        width:90px;
+        font-weight:bold;
+    }
+    .EmployeeCost
+    {
+        width:80px;
+        font-weight:bold;
+    }
+    .EmployeeRate
+    {
+        width:200px;
+        font-weight:bold;
+    }
+    .EmployeeRespect
+    {
+        width:60px;
+        font-weight:bold;
+    }
+    .EmployeeActions
+    {
+        width:100px;
+        font-weight:bold;
+    }
+    .EmployeeHired
+    {
+        width:60px;
+        font-weight:bold;
+    }
+.OrganizationTable
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+    .OrganizationTable td
+    {
+        border-bottom:1px solid grey;
+    }
+
+    .Upgrade
+    {
+        width:80px;
+        font-weight:bold;
+    }
+    .OrganizationCost
+    {
+        width:90px;
+        font-weight:bold;
+    }
+    .OrganizationBonus
+    {
+        width:250px;
+        font-weight:bold;
+    }
+    .OrganizationActions
+    {
+        width:80px;
+        font-weight:bold;
+    }
+    .OrganizationInventory
+    {
+        width:40px;
+        font-weight:bold;
+    }
