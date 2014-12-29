@@ -84,6 +84,7 @@ function DeleteGame()
     document.cookie = "EmployeeTabEnabled=;" + DeleteCookie;
     document.cookie = "BaseTabEnabled=;" + DeleteCookie;
 }
+<<<<<<< HEAD
 function CreateStealMoneyBtn()
 {
     var btn = document.createElement('button');
@@ -93,12 +94,17 @@ function CreateStealMoneyBtn()
 
     document.getElementById('StealMoneyButton').appendChild(btn);
 }
+=======
+>>>>>>> origin/master
 function OnLoad() 
 {
     setInterval(Refresh, 500);
 
+<<<<<<< HEAD
     CreateStealMoneyBtn();
 
+=======
+>>>>>>> origin/master
     HideTab('Shop');
     HideTab('Employees');
     HideTab('Organization');
@@ -106,8 +112,11 @@ function OnLoad()
 
     SetMessage('MainMje', 'You are a low-level thief, cant really steal from others than homeless and old people.');
     SetMessage('MainSubMje', 'Do you really wanna steal from those poor people?');
+<<<<<<< HEAD
     SetMessage('currentRespect', '<br />');
     SetMessage('MoneyPerSec', '<br />');
+=======
+>>>>>>> origin/master
 }
 function BuyWeapon(id)
 {
@@ -186,13 +195,21 @@ function RefreshWeaponsTable()
         cell.innerHTML = WeaponsName[i];
 
         var cell1 = row.insertCell(1);
+<<<<<<< HEAD
         cell1.innerHTML = '$' + WeaponsCost[i];
+=======
+        cell1.innerHTML = WeaponsCost[i];
+>>>>>>> origin/master
 
         var cell2 = row.insertCell(2);
         cell2.innerHTML = 'Steal Money +$' + WeaponsBonus[i];
 
         var cell3 = row.insertCell(3);
+<<<<<<< HEAD
         var btn = document.createElement('button');
+=======
+        var btn = document.createElement('Button');
+>>>>>>> origin/master
         btn.setAttribute('onclick', 'BuyWeapon(' + i + ')');
         var t = document.createTextNode("Buy");
         btn.appendChild(t);
@@ -263,7 +280,11 @@ function RefreshOrganizationTable()
         cell.innerHTML = OrgNames[i];
 
         var cell1 = row.insertCell(1);
+<<<<<<< HEAD
         cell1.innerHTML = '$' + OrgCost[i];
+=======
+        cell1.innerHTML = OrgCost[i];
+>>>>>>> origin/master
 
         var cell2 = row.insertCell(2);
         cell2.innerHTML = OrgBonus[i] + ' +' + OrgBonusRate[i];
@@ -276,7 +297,11 @@ function RefreshOrganizationTable()
         cell3.appendChild(btn);
 
         var cell4 = row.insertCell(4);
+<<<<<<< HEAD
         cell4.innerHTML = OrgInventory[i] + '/' + OrgCap[i];
+=======
+        cell4.innerHTML = OrgInventory[i];
+>>>>>>> origin/master
     }
 }
 function BuyOrgItem(id)
@@ -289,14 +314,22 @@ function BuyOrgItem(id)
         switch(OrgBonusType)
         {
             case 'WeaponsCap':
+<<<<<<< HEAD
                 for (var i = 0; i < WeaponsCap; i++)
                 {
+=======
+                for (var i = 0; i < WeaponsCap; i++){
+>>>>>>> origin/master
                     WeaponsCap[i] += OrgBonusRate[id];
                 }
             break;
             case 'EmployeeCap':
+<<<<<<< HEAD
                 for (var i = 0; i < EmployeeCap; i++)
                 {
+=======
+                for (var i = 0; i < EmployeeCap; i++) {
+>>>>>>> origin/master
                     EmployeeCap[i] += OrgBonusRate[id];
                 }
             break;
@@ -305,19 +338,30 @@ function BuyOrgItem(id)
             break;
             case 'EmployeesStealRate':
                 var cont = 0;
+<<<<<<< HEAD
                 for (var i = 0; i < EmployeesInventory; i++)
                 {
+=======
+                for (var i = 0; i < EmployeesInventory; i++) {
+>>>>>>> origin/master
                     cont += EmployeesInventory[i];
                 }
 
             break;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         }
 
         if (OrgNames[id] == 'Base' && !BaseTabEnabled)
         {
             alert('Congratulations, you now have a brand new base!');
             ShowTab('Base');
+<<<<<<< HEAD
             BaseTabEnabled = true;
+=======
+>>>>>>> origin/master
         }
         
     }
@@ -331,7 +375,11 @@ function GetMoney()
     if (parseInt(Money) >= 10 && !ShopTabEnabled)
     {
         SetMessage('MainMje', 'Boy, you are really stealing from them.');
+<<<<<<< HEAD
         SetMessage('MainSubMje', '<br /> <br /> ');
+=======
+        SetMessage('MainSubMje', 'f');
+>>>>>>> origin/master
     }
 
     if (parseInt(Money) >= 15 && !ShopTabEnabled)
@@ -350,12 +398,20 @@ function Refresh()
     div.innerHTML = 'Current Money: $' + Money.toFixed(2);
 
     var div = document.getElementById('currentMoneyRate');
+<<<<<<< HEAD
     div.innerHTML = 'Money Steal Rate: $' + MoneyRate.toFixed(2) + ' per steal.';
+=======
+    div.innerHTML = 'Money Steal Rate: +$' + MoneyRate.toFixed(2) + ' per steal.';
+>>>>>>> origin/master
 
     if (EmployeeTabEnabled)
     {
         var div = document.getElementById('MoneyPerSec');
+<<<<<<< HEAD
         div.innerHTML = 'Money per second: $' + (MoneyRate * EmployeesStealRateBonus).toFixed(3);
+=======
+        div.innerHTML = 'Money per second: +$' + (MoneyRate * EmployeesStealRateBonus).toFixed(3);
+>>>>>>> origin/master
 
         var div = document.getElementById('currentRespect');
         div.innerHTML = 'Respect: ' + Respect;
