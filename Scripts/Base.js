@@ -281,21 +281,22 @@ function RefreshOrganizationTable()
 }
 function BuyOrgItem(id)
 {
-    if (parseInt(Money) >= parseInt(OrgCost[id]))
+    if (parseInt(Money) >= parseInt(OrgCost[id]) && parseInt(OrgInventory[id]) < parseInt(OrgCap[id]))
     {
         Money = parseInt(Money) - parseInt(OrgCost[id]);
         OrgInventory[id]++;
 
-        switch(OrgBonusType)
+        switch(OrgBonusType[id])
         {
             case 'WeaponsCap':
-                for (var i = 0; i < WeaponsCap; i++)
+                
+                for (var i = 0; i < WeaponsCap.length; i++)
                 {
                     WeaponsCap[i] += OrgBonusRate[id];
                 }
             break;
             case 'EmployeeCap':
-                for (var i = 0; i < EmployeeCap; i++)
+                for (var i = 0; i < EmployeeCap.length; i++)
                 {
                     EmployeeCap[i] += OrgBonusRate[id];
                 }
